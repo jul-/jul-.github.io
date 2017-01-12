@@ -1,0 +1,1445 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(1);
+	
+	var _eloquaConfig = __webpack_require__(2);
+	
+	var _eloquaForm = __webpack_require__(26);
+	
+	var _eloquaForm2 = _interopRequireDefault(_eloquaForm);
+	
+	var _translator = __webpack_require__(10);
+	
+	var _translator2 = _interopRequireDefault(_translator);
+	
+	var _jquery = __webpack_require__(25);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// set translator locale
+	_translator2.default.setLocale('de');
+	
+	// init form
+	/**
+	 * Created by br0wn on 2/3/16.
+	 */
+	
+	var form = new _eloquaForm2.default();
+	form.init();
+	
+	// show form if hidden
+	(0, _jquery2.default)(document).ready(function () {
+	  form.getFormElement().show();
+	});
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _eloquaConfig = __webpack_require__(2);
+	
+	var _url = __webpack_require__(3);
+	
+	var URL = _interopRequireWildcard(_url);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	/**
+	 * @global
+	 * @type {_elqQ|Array}
+	 */
+	/**
+	 * Created by br0wn on 2/3/16.
+	 */
+	
+	var _elqQ = _elqQ || [];
+	_elqQ.push(['elqSetSiteId', _eloquaConfig.Configuration.siteId]);
+	_elqQ.push(['elqTrackPageView']);
+	
+	(function () {
+	    function async_load() {
+	        var s = document.createElement('script');
+	        s.type = 'text/javascript';
+	        s.async = true;
+	        s.src = '//img06.en25.com/i/elqCfg.min.js';
+	        var x = document.getElementsByTagName('script')[0];
+	        x.parentNode.insertBefore(s, x);
+	    }
+	
+	    if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);else if (window.attachEvent) window.attachEvent('onload', async_load);
+	})();
+	
+	// export _elqQ to window
+	window['_elqQ'] = _elqQ;
+	
+	/*
+	 * parse query params
+	 */
+	var url = window.location.href;
+	var elqTrackId = URL.getQueryParameter('elqTrackId', url);
+	var coid = URL.getQueryParameter('coid', url);
+	var elqCampaignId = URL.getQueryParameter('elqCampaignId', url);
+	var lsrco = URL.getQueryParameter('lsrco', url);
+	var lsrcoakt = URL.getQueryParameter('lsrcoakt', url);
+	
+	/*
+	 * update Eloqua configuration
+	 */
+	if (elqTrackId) {
+	    _eloquaConfig.Configuration.trackId = elqTrackId;
+	}
+	if (coid) {
+	    _eloquaConfig.Configuration.contactId = coid;
+	}
+	if (elqCampaignId) {
+	    _eloquaConfig.Configuration.campaignId = elqCampaignId;
+	}
+	if (lsrco) {
+	    _eloquaConfig.Configuration.lsrco = lsrco;
+	}
+	if (lsrcoakt) {
+	    _eloquaConfig.Configuration.lsrcoakt = lsrcoakt;
+	}
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	/**
+	 * Created by br0wn on 2/3/16.
+	 */
+	
+	/**
+	 * Eloqua configuration options
+	 *
+	 * @type {{siteId: string, campaignId: string, trackId: null, contactId: null, form: {name: string}, download: {element: string}, lookupKeys: {visitor: string, contactId: string, form: string}}}
+	 */
+	var Configuration = exports.Configuration = {
+	    siteId: '1516083671',
+	    campaignId: '',
+	    trackId: null,
+	    contactId: null,
+	    lsrco: null,
+	    lsrcoakt: null,
+	    form: {
+	        name: 'wf-form-Haufe-UC1-Form-v1'
+	    },
+	    download: {
+	        element: '#eloqua-dl'
+	    },
+	    lookupKeys: {
+	        visitor: '2335d03cd7f84b4b8c754c4de91d9575',
+	        contactId: '99a587047e214f80b15ed64718c18c79',
+	        form: '00e79bc1881340de825262247a655eba'
+	    }
+	};
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.getQueryParameter = getQueryParameter;
+	exports.updateQueryParameter = updateQueryParameter;
+	/**
+	 * Created by br0wn on 2/4/16.
+	 */
+	
+	/**
+	 * Returns parameter `name` from `url`
+	 *
+	 * @param {string} name
+	 * @param {string} url
+	 * @return {*}
+	 */
+	function getQueryParameter(name, url) {
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	
+	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+	
+	/**
+	 * Updates query parameter value in url
+	 * If parameter does not exist, it will be added to the end of query.
+	 * If parameter value is set to null|undefined or omitted, parameter will be removed
+	 *
+	 * @param {string} url
+	 * @param {string} name
+	 * @param {null|string} value
+	 * @return {*}
+	 */
+	function updateQueryParameter(url, name, value) {
+	    // escape name
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    // set default value to null
+	    value = typeof value === "undefined" ? null : value;
+	
+	    var encodedValue = encodeURIComponent(value),
+	        regex = new RegExp("([?&]" + name + ")(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	
+	    if (results && value !== null) {
+	        // update param
+	        return url.replace(regex, '$1=' + encodedValue);
+	    } else if (value !== null) {
+	        // add param to end
+	        return url + (/\?/.test(url) ? '&' : '?') + (name + "=" + encodedValue);
+	    } else {
+	        // remove param from url
+	        return url.replace(regex, '');
+	    }
+	}
+
+/***/ },
+/* 4 */,
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	exports.__esModule = true;
+	
+	exports.default = function (instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	};
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	exports.__esModule = true;
+	
+	var _defineProperty = __webpack_require__(7);
+	
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = (function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];
+	      descriptor.enumerable = descriptor.enumerable || false;
+	      descriptor.configurable = true;
+	      if ("value" in descriptor) descriptor.writable = true;
+	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+	    }
+	  }
+	
+	  return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+	    if (staticProps) defineProperties(Constructor, staticProps);
+	    return Constructor;
+	  };
+	})();
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(8), __esModule: true };
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(9);
+	module.exports = function defineProperty(it, key, desc){
+	  return $.setDesc(it, key, desc);
+	};
+
+/***/ },
+/* 9 */
+/***/ function(module, exports) {
+
+	var $Object = Object;
+	module.exports = {
+	  create:     $Object.create,
+	  getProto:   $Object.getPrototypeOf,
+	  isEnum:     {}.propertyIsEnumerable,
+	  getDesc:    $Object.getOwnPropertyDescriptor,
+	  setDesc:    $Object.defineProperty,
+	  setDescs:   $Object.defineProperties,
+	  getKeys:    $Object.keys,
+	  getNames:   $Object.getOwnPropertyNames,
+	  getSymbols: $Object.getOwnPropertySymbols,
+	  each:       [].forEach
+	};
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _keys = __webpack_require__(11);
+	
+	var _keys2 = _interopRequireDefault(_keys);
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _en = __webpack_require__(23);
+	
+	var _en2 = _interopRequireDefault(_en);
+	
+	var _de = __webpack_require__(24);
+	
+	var _de2 = _interopRequireDefault(_de);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by br0wn on 2/11/16.
+	 */
+	
+	var DEFAULT_LOCALE = 'en';
+	
+	var Translator = {
+	
+	    /**
+	     * @type {{}}
+	     * @private
+	     */
+	    _translations: {},
+	
+	    /**
+	     * @type {string}
+	     */
+	    locale: DEFAULT_LOCALE,
+	
+	    /**
+	     * Replaces keys from `parameters` with their values in `target`
+	     *
+	     * @param {string} target
+	     * @param {object} params
+	     * @return {string}
+	     *
+	     * @private
+	     */
+	    _replaceParams: function _replaceParams(target) {
+	        var params = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	
+	        (0, _keys2.default)(params).forEach(function (key) {
+	            target = target.replace(key, params[key]);
+	        });
+	
+	        return target;
+	    },
+	
+	    /**
+	     * Sets translations for locale
+	     *
+	     * @param {string} locale
+	     * @param {object} translations
+	     */
+	    setTranslations: function setTranslations(locale, translations) {
+	        this._translations[locale] = translations;
+	    },
+	
+	    /**
+	     * Sets locale for translations
+	     *
+	     * @param {string} locale
+	     */
+	    setLocale: function setLocale(locale) {
+	        this.locale = locale;
+	    },
+	
+	    /**
+	     * Translates `id` for currently set locale. If `locale` param is supplied it will fetch translation for that locale.
+	     * `param` keys are replaced with their values in `id`.
+	     *
+	     * @param {string} id
+	     * @param {object=} params
+	     * @param {string=} locale
+	     *
+	     * @return {string}
+	     */
+	    translate: function translate(id) {
+	        var params = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	        var locale = arguments.length <= 2 || arguments[2] === undefined ? null : arguments[2];
+	
+	        // set locale to use
+	        if (null === locale) {
+	            locale = this.locale;
+	        }
+	        // if no translations for current locale
+	        // use default locale instead
+	        if (!this._translations[locale]) {
+	            locale = DEFAULT_LOCALE;
+	        }
+	
+	        // get translation
+	        var translation = this._translations[locale][id];
+	
+	        // try default locale if not found
+	        if (!translation) {
+	            translation = this._translations[DEFAULT_LOCALE][id];
+	        }
+	
+	        // if not found again return id
+	        if (!translation) {
+	            translation = id;
+	        }
+	
+	        return this._replaceParams(translation, params);
+	    }
+	};
+	
+	// set translations
+	Translator.setTranslations(DEFAULT_LOCALE, _en2.default);
+	Translator.setTranslations('de', _de2.default);
+	
+	exports.default = Translator;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(12), __esModule: true };
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(13);
+	module.exports = __webpack_require__(19).Object.keys;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.2.14 Object.keys(O)
+	var toObject = __webpack_require__(14);
+	
+	__webpack_require__(16)('keys', function($keys){
+	  return function keys(it){
+	    return $keys(toObject(it));
+	  };
+	});
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.1.13 ToObject(argument)
+	var defined = __webpack_require__(15);
+	module.exports = function(it){
+	  return Object(defined(it));
+	};
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	// 7.2.1 RequireObjectCoercible(argument)
+	module.exports = function(it){
+	  if(it == undefined)throw TypeError("Can't call method on  " + it);
+	  return it;
+	};
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// most Object methods by ES6 should accept primitives
+	var $export = __webpack_require__(17)
+	  , core    = __webpack_require__(19)
+	  , fails   = __webpack_require__(22);
+	module.exports = function(KEY, exec){
+	  var fn  = (core.Object || {})[KEY] || Object[KEY]
+	    , exp = {};
+	  exp[KEY] = exec(fn);
+	  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
+	};
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global    = __webpack_require__(18)
+	  , core      = __webpack_require__(19)
+	  , ctx       = __webpack_require__(20)
+	  , PROTOTYPE = 'prototype';
+	
+	var $export = function(type, name, source){
+	  var IS_FORCED = type & $export.F
+	    , IS_GLOBAL = type & $export.G
+	    , IS_STATIC = type & $export.S
+	    , IS_PROTO  = type & $export.P
+	    , IS_BIND   = type & $export.B
+	    , IS_WRAP   = type & $export.W
+	    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+	    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+	    , key, own, out;
+	  if(IS_GLOBAL)source = name;
+	  for(key in source){
+	    // contains in native
+	    own = !IS_FORCED && target && key in target;
+	    if(own && key in exports)continue;
+	    // export native or passed
+	    out = own ? target[key] : source[key];
+	    // prevent global pollution for namespaces
+	    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+	    // bind timers to global for call from export context
+	    : IS_BIND && own ? ctx(out, global)
+	    // wrap global constructors for prevent change them in library
+	    : IS_WRAP && target[key] == out ? (function(C){
+	      var F = function(param){
+	        return this instanceof C ? new C(param) : C(param);
+	      };
+	      F[PROTOTYPE] = C[PROTOTYPE];
+	      return F;
+	    // make static versions for prototype methods
+	    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+	    if(IS_PROTO)(exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+	  }
+	};
+	// type bitmap
+	$export.F = 1;  // forced
+	$export.G = 2;  // global
+	$export.S = 4;  // static
+	$export.P = 8;  // proto
+	$export.B = 16; // bind
+	$export.W = 32; // wrap
+	module.exports = $export;
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+	var global = module.exports = typeof window != 'undefined' && window.Math == Math
+	  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+
+/***/ },
+/* 19 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '1.2.6'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// optional / simple context binding
+	var aFunction = __webpack_require__(21);
+	module.exports = function(fn, that, length){
+	  aFunction(fn);
+	  if(that === undefined)return fn;
+	  switch(length){
+	    case 1: return function(a){
+	      return fn.call(that, a);
+	    };
+	    case 2: return function(a, b){
+	      return fn.call(that, a, b);
+	    };
+	    case 3: return function(a, b, c){
+	      return fn.call(that, a, b, c);
+	    };
+	  }
+	  return function(/* ...args */){
+	    return fn.apply(that, arguments);
+	  };
+	};
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	module.exports = function(it){
+	  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+	  return it;
+	};
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = function(exec){
+	  try {
+	    return !!exec();
+	  } catch(e){
+	    return true;
+	  }
+	};
+
+/***/ },
+/* 23 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	/**
+	 * Created by br0wn on 2/11/16.
+	 */
+	
+	exports.default = {
+	    'validation.field-required': 'Field "%field%" is required.',
+	    'validation.field-required-checked': 'Please accept this note.',
+	    'validation.invalid-email': 'The provided email is not valid.'
+	};
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	/**
+	 * Created by br0wn on 2/16/16.
+	 */
+	
+	exports.default = {
+	    'validation.field-required': 'Das Feld "%field%" ist ein Pflichtfeld.',
+	    'validation.field-required-checked': 'Bitte akzeptieren Sie diesen Hinweis.',
+	    'validation.invalid-email': 'Die E-Mail-Adresse ist nicht gültig.'
+	};
+
+/***/ },
+/* 25 */
+/***/ function(module, exports) {
+
+	module.exports = jQuery;
+
+/***/ },
+/* 26 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _keys = __webpack_require__(11);
+	
+	var _keys2 = _interopRequireDefault(_keys);
+	
+	var _classCallCheck2 = __webpack_require__(5);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(6);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _eloquaConfig = __webpack_require__(2);
+	
+	var _fieldsConfig = __webpack_require__(27);
+	
+	var FormFields = _interopRequireWildcard(_fieldsConfig);
+	
+	var _translator = __webpack_require__(10);
+	
+	var _translator2 = _interopRequireDefault(_translator);
+	
+	var _jquery = __webpack_require__(25);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	var _url = __webpack_require__(3);
+	
+	var URL = _interopRequireWildcard(_url);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var SHOWN_FIELDS_COUNT = 3; /**
+	                             * Created by br0wn on 2/2/16.
+	                             */
+	
+	var PRIVACY_STORAGE_KEY = 'eloqua.form.privacy.value';
+	var CLASS_VALIDATION_MESSAGE = 'validation-message';
+	var EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+	var URL_PARAM_COID = 'coid';
+	
+	function _elqQ() {
+	    return window['_elqQ'];
+	}
+	
+	var EloquaForm = function () {
+	    function EloquaForm() {
+	        (0, _classCallCheck3.default)(this, EloquaForm);
+	
+	        /**
+	         * @type {{shownFieldsCount: number}}
+	         */
+	        this.options = {
+	            shownFieldsCount: SHOWN_FIELDS_COUNT
+	        };
+	        /**
+	         * @type {string|null}
+	         * @private
+	         */
+	        this._lookupStage = null;
+	        /**
+	         * @type {object}
+	         */
+	        this.visitor = {};
+	        this.visitor.data = {};
+	    }
+	
+	    /**
+	     * Form initialization
+	     */
+	
+	    (0, _createClass3.default)(EloquaForm, [{
+	        key: 'init',
+	        value: function init() {
+	            var _this = this;
+	
+	            var self = this;
+	            var _oldSetElqContent = window['SetElqContent'];
+	
+	            /**
+	             * Overrides SetElqContent method
+	             */
+	            window['SetElqContent'] = function () {
+	                self._onSetElqContent();
+	
+	                // call overridden method
+	                if (_oldSetElqContent) {
+	                    _oldSetElqContent();
+	                }
+	            };
+	
+	            /*
+	             * Init on submt event
+	             */
+	            this.getFormElement().on('submit', function (event) {
+	                return _this._onFormSubmit(event);
+	            });
+	
+	            /*
+	             * Init lookup
+	             */
+	            if (_eloquaConfig.Configuration.contactId) {
+	                // set visitor contact
+	                this.visitor.contactId = _eloquaConfig.Configuration.contactId;
+	
+	                // lookup form if contact id is supplied already
+	                this._lookupForm(_eloquaConfig.Configuration.contactId);
+	            } else {
+	                // otherwise lookup visitor first
+	                this._lookupVisitor();
+	            }
+	
+	            /*
+	             * Init form
+	             */
+	            (0, _jquery2.default)(document).ready(function () {
+	                return _this._updateForm();
+	            });
+	        }
+	
+	        /**
+	         * Returns from element
+	         *
+	         * @return {jQuery|HTMLElement}
+	         */
+	
+	    }, {
+	        key: 'getFormElement',
+	        value: function getFormElement() {
+	            return (0, _jquery2.default)('form[name="' + _eloquaConfig.Configuration.form.name + '"]');
+	        }
+	
+	        /**
+	         * Handles form submot
+	         *
+	         * @param event
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_onFormSubmit',
+	        value: function _onFormSubmit(event) {
+	            // handle privacy policy separately
+	            this._validateFormSubmit(event);
+	        }
+	
+	        /**
+	         * Validates form input data
+	         *
+	         * @param event
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_validateFormSubmit',
+	        value: function _validateFormSubmit(event) {
+	            // get form
+	            var form = (0, _jquery2.default)(event.target);
+	            var preventSubmit = false;
+	
+	            // clear validation messages
+	            form.find('.' + CLASS_VALIDATION_MESSAGE).text('');
+	
+	            var validateField = function validateField(field) {
+	                // set field DOM
+	                var fieldElement = form.find('[name="' + field.name + '"]');
+	                var fieldContainer = fieldElement.parents(field.container).first();
+	                var validationContainer = fieldContainer.find('.' + CLASS_VALIDATION_MESSAGE);
+	
+	                // skip disabled fields
+	                if (fieldElement.prop('disabled') == true) {
+	                    return;
+	                }
+	
+	                // set field titel and value
+	                var fieldTitle = fieldContainer.find('.field-label').text().replace(':', '').trim();
+	                var fieldValue = fieldElement.val().trim();
+	
+	                if (!fieldValue) {
+	                    // prevent submission
+	                    preventSubmit = true;
+	                    // get message
+	                    var message = _translator2.default.translate('validation.field-required', {
+	                        '%field%': fieldTitle
+	                    });
+	                    // show message
+	                    validationContainer.text(message);
+	                    // continue
+	                    return;
+	                }
+	
+	                // validate email
+	                if (field.name == FormFields.MandatoryFields.emailAddress.name) {
+	                    if (!EMAIL_REGEX.test(fieldValue)) {
+	                        // prevent submission
+	                        preventSubmit = true;
+	                        // get message
+	                        var message = _translator2.default.translate('validation.invalid-email');
+	                        // show message
+	                        validationContainer.text(message);
+	                    }
+	                }
+	
+	                // privacy policy must be checked
+	                // opt in general must be checked
+	                if (field.name == FormFields.CustomFields.privacyPolicy.name || field.name == FormFields.CustomFields.optInGeneral.name) {
+	                    if (fieldElement.prop('checked') != true) {
+	                        // prevent submission
+	                        preventSubmit = true;
+	                        // get message
+	                        var message = _translator2.default.translate('validation.field-required-checked', {
+	                            '%field%': fieldTitle
+	                        });
+	                        // show message
+	                        validationContainer.text(message);
+	                    }
+	                }
+	            };
+	
+	            // validate mandatory fields
+	            (0, _keys2.default)(FormFields.MandatoryFields).forEach(function (key) {
+	                // set filed conf
+	                validateField(FormFields.MandatoryFields[key]);
+	            });
+	
+	            // validate input fields
+	            (0, _keys2.default)(FormFields.InputFields).forEach(function (key) {
+	                // set filed conf
+	                validateField(FormFields.InputFields[key]);
+	            });
+	
+	            // validate custom fields
+	            (0, _keys2.default)(FormFields.CustomFields).forEach(function (key) {
+	                // set filed conf
+	                validateField(FormFields.CustomFields[key]);
+	            });
+	
+	            if (preventSubmit) {
+	                event.preventDefault();
+	            }
+	        }
+	
+	        /**
+	         * Initiates lookup for visitor data
+	         *
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_lookupVisitor',
+	        value: function _lookupVisitor() {
+	            // set lookup stage to visitor
+	            this._lookupStage = 'visitor';
+	            // initiate lookup
+	            _elqQ().push(['elqDataLookup', escape(_eloquaConfig.Configuration.lookupKeys.visitor), '']);
+	        }
+	
+	        /**
+	         * Triggered when visitor lookup is done
+	         *
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_onLookupVisitor',
+	        value: function _onLookupVisitor() {
+	            // reset lookup stage
+	            this._lookupStage = null;
+	
+	            // process response
+	            var email = GetElqContentPersonalizationValue('V_Email_Address');
+	            this.visitor.email = email;
+	
+	            if (email) {
+	                // initiate contact id lookup if email exists
+	                this._lookupContactId(email);
+	            }
+	        }
+	
+	        /**
+	         * Initiates lookup for contact id
+	         *
+	         * @param email
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_lookupContactId',
+	        value: function _lookupContactId(email) {
+	            // set lookup stage to contact id
+	            this._lookupStage = 'contactId';
+	            // initiate lookup
+	            _elqQ().push(['elqDataLookup', escape(_eloquaConfig.Configuration.lookupKeys.contactId), '<C_EmailAddress>' + email + '</C_EmailAddress>']);
+	        }
+	
+	        /**
+	         * Triggered when contact id lookup is done
+	         *
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_onLookupContactId',
+	        value: function _onLookupContactId() {
+	            // reset lookup stage
+	            this._lookupStage = null;
+	
+	            // process response
+	            var contactId = GetElqContentPersonalizationValue('ContactIDExt');
+	            this.visitor.contactId = contactId;
+	
+	            if (contactId) {
+	                // initiate form lookup if contact id exists
+	                this._lookupForm(contactId);
+	            }
+	        }
+	
+	        /**
+	         * Initiates form data lookup
+	         *
+	         * @param contactId
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_lookupForm',
+	        value: function _lookupForm(contactId) {
+	            // set lookup stage to form
+	            this._lookupStage = 'form';
+	            // initiate lookup
+	            _elqQ().push(['elqDataLookup', escape(_eloquaConfig.Configuration.lookupKeys.form), '<ContactIDExt>' + contactId + '</ContactIDExt>']);
+	        }
+	
+	        /**
+	         * Triggered when form lookup is done
+	         *
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_onLookupForm',
+	        value: function _onLookupForm() {
+	            var _this2 = this;
+	
+	            // reset lookup stage
+	            this._lookupStage = null;
+	
+	            /**
+	             * Adds value for `field` to visitor data
+	             *
+	             * @param {object} field Field configuration from FormFields
+	             */
+	            var addVisitorData = function addVisitorData(field) {
+	                // skip non-eloqua fields
+	                if (!field.eloqua) {
+	                    return;
+	                }
+	
+	                // get value from response
+	                var fieldValue = GetElqContentPersonalizationValue(field.eloqua.name);
+	
+	                // set it to visitors data
+	                _this2.visitor.data[field.name] = fieldValue ? fieldValue : null;
+	            };
+	
+	            // process mandatory fields
+	            (0, _keys2.default)(FormFields.MandatoryFields).forEach(function (key) {
+	                addVisitorData(FormFields.MandatoryFields[key]);
+	            });
+	
+	            // process custom fields
+	            (0, _keys2.default)(FormFields.CustomFields).forEach(function (key) {
+	                addVisitorData(FormFields.CustomFields[key]);
+	            });
+	
+	            // process input fields
+	            (0, _keys2.default)(FormFields.InputFields).forEach(function (key) {
+	                addVisitorData(FormFields.InputFields[key]);
+	            });
+	
+	            // update form
+	            this._updateForm();
+	        }
+	
+	        /**
+	         * Updates form using visitors data
+	         *
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_updateForm',
+	        value: function _updateForm() {
+	            var _this3 = this;
+	
+	            var visitorData = this.visitor.data;
+	            var shownFieldsCounter = 0;
+	            var hasMandatoryFields = false;
+	
+	            /*
+	             * Process mandatory fields
+	             */
+	            (0, _keys2.default)(FormFields.MandatoryFields).forEach(function (key) {
+	                // set field object
+	                var field = FormFields.MandatoryFields[key];
+	
+	                // get field value
+	                var fieldValue = visitorData[field.name] || null;
+	                var fieldContainer = (0, _jquery2.default)(field.container);
+	                var fieldItem = fieldContainer.find('[name="' + field.name + '"]');
+	
+	                // reset field display
+	                fieldContainer.show();
+	                fieldItem.prop('disabled', false);
+	
+	                // update field display
+	                if (field.display.showAlways) {
+	                    // set field value for fileds that are always shown
+	                    fieldItem.val(fieldValue);
+	                } else if (null !== fieldValue) {
+	                    // hide filled form fields
+	                    fieldContainer.hide();
+	                    fieldItem.prop('disabled', true);
+	                } else {}
+	                // leave field shown
+	
+	                // set flag
+	                hasMandatoryFields = !!fieldValue;
+	            });
+	
+	            /*
+	             * Process privacy policy and opt in general
+	             */
+	            var optInGeneralValue = visitorData[FormFields.CustomFields.optInGeneral.name];
+	            if (optInGeneralValue && optInGeneralValue != '0') {
+	                // hide opt in general and privacy fields
+	                ['optInGeneral', 'privacyPolicy'].forEach(function (key) {
+	                    // set field object
+	                    var field = FormFields.CustomFields[key];
+	
+	                    // get field DOM
+	                    var fieldContainer = (0, _jquery2.default)(field.container);
+	                    var fieldItem = fieldContainer.find('[name="' + field.name + '"]');
+	
+	                    // hide
+	                    fieldContainer.hide();
+	                    fieldItem.prop('disabled', true);
+	                });
+	            }
+	
+	            /*
+	             * Process dynamic input fields
+	             */
+	            (0, _keys2.default)(FormFields.InputFields).forEach(function (key) {
+	                // set field object
+	                var field = FormFields.InputFields[key];
+	
+	                // get field value
+	                var fieldValue = visitorData[field.name] || null;
+	                var fieldContainer = (0, _jquery2.default)(field.container);
+	                var fieldItem = fieldContainer.find('[name="' + field.name + '"]');
+	
+	                // reset field display
+	                fieldContainer.show();
+	                fieldItem.prop('disabled', false);
+	
+	                // update field display
+	                if (!hasMandatoryFields) {
+	                    // hide input fields if mandatory fields have not been filled
+	                    fieldContainer.hide();
+	                    fieldItem.prop('disabled', true);
+	                } else if (field.display.showAlways) {
+	                    // set field value for mandatory form fields
+	                    fieldItem.val(fieldValue);
+	                } else if (null !== fieldValue) {
+	                    // hide non mandatory form fields
+	                    fieldContainer.hide();
+	                    fieldItem.prop('disabled', true);
+	                } else {
+	                    // if shown limit is reached
+	                    if (shownFieldsCounter >= _this3.options.shownFieldsCount) {
+	                        // hide form field
+	                        fieldContainer.hide();
+	                        fieldItem.prop('disabled', true);
+	                    } else {
+	                        // increase shown counter
+	                        shownFieldsCounter++;
+	                    }
+	                }
+	
+	                console.log(shownFieldsCounter);
+	            });
+	
+	            if (shownFieldsCounter <= 0) {}
+	            // if all data is filled do something
+	            //  ...
+	
+	            // update redirect and opt-in URLs if contactId is present
+	            if (this.visitor.contactId) {
+	                /**
+	                 * Adds/updates coid param of the field url
+	                 *
+	                 * @param field
+	                 */
+	                var setFieldUrlCoidParam = function setFieldUrlCoidParam(field) {
+	                    var fieldItem = _this3.getFormElement().find('[name="' + field.name + '"]');
+	                    // update url
+	                    var url = fieldItem.val();
+	                    url = URL.updateQueryParameter(url, URL_PARAM_COID, _this3.visitor.contactId);
+	                    // set new url
+	                    fieldItem.val(url);
+	                };
+	
+	                setFieldUrlCoidParam(FormFields.HiddenFields.redirectURL);
+	                setFieldUrlCoidParam(FormFields.HiddenFields.optInURL);
+	            }
+	
+	            // proces hidden fields
+	            ['lsrco', 'lsrcoakt', 'optinurlds'].forEach(function (key) {
+	                var field = FormFields.HiddenFields[key];
+	                var fieldItem = _this3.getFormElement().find('[name="' + field.name + '"]');
+	                // update value
+	                if (!fieldItem.val().trim()) {
+	                    fieldItem.val(field.value);
+	                }
+	            });
+	        }
+	
+	        /**
+	         * Called when global SetElqContent is called
+	         *s
+	         * @private
+	         */
+	
+	    }, {
+	        key: '_onSetElqContent',
+	        value: function _onSetElqContent() {
+	            switch (this._lookupStage) {
+	                case 'visitor':
+	                    this._onLookupVisitor();
+	                    break;
+	                case 'contactId':
+	                    this._onLookupContactId();
+	                    break;
+	                case 'form':
+	                    this._onLookupForm();
+	                    break;
+	                default:
+	                    break;
+	            }
+	        }
+	    }]);
+	    return EloquaForm;
+	}();
+	
+	exports.default = EloquaForm;
+
+/***/ },
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.InputFields = exports.MandatoryFields = exports.CustomFields = exports.HiddenFields = undefined;
+	
+	var _eloquaConfig = __webpack_require__(2);
+	
+	var HiddenFields = exports.HiddenFields = {
+	    elqFormName: {
+	        name: 'elqFormName',
+	        value: _eloquaConfig.Configuration.form.name
+	    },
+	    elqSiteId: {
+	        name: 'elqSiteId',
+	        value: _eloquaConfig.Configuration.siteId
+	    },
+	    elqCampaignId: {
+	        name: 'elqCampaignId',
+	        value: _eloquaConfig.Configuration.campaignId
+	    },
+	    optInURL: {
+	        name: 'optInURL',
+	        value: _eloquaConfig.Configuration.form.optInURL
+	    },
+	    redirectURL: {
+	        name: 'redirectURL',
+	        value: _eloquaConfig.Configuration.form.redirectURL
+	    },
+	    language: {
+	        name: 'language',
+	        value: _eloquaConfig.Configuration.form.language
+	    },
+	    lsrco: {
+	        name: 'lsrco',
+	        value: _eloquaConfig.Configuration.lsrco
+	    },
+	    lsrcoakt: {
+	        name: 'lsrcoakt',
+	        value: _eloquaConfig.Configuration.lsrcoakt
+	    },
+	    'optinurlds': {
+	        name: 'optinurlds',
+	        value: [window.location.protocol, '//', window.location.host, window.location.pathname].join('')
+	    }
+	}; /**
+	    * Created by br0wn on 2/3/16.
+	    */
+	
+	var CustomFields = exports.CustomFields = {
+	    privacyPolicy: {
+	        name: 'privacyPolicy',
+	        container: '#fieldPrivacyPolicy',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Privacy_Policy1'
+	        }
+	    },
+	    optInGeneral: {
+	        name: 'optInGeneral',
+	        container: '#fieldOptInGeneral',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Opt_In_General1'
+	        }
+	    }
+	};
+	
+	var MandatoryFields = exports.MandatoryFields = {
+	    salutation: {
+	        name: 'salutation',
+	        container: '#fieldSalutation',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Salutation'
+	        }
+	    },
+	    firstName: {
+	        name: 'firstName',
+	        container: '#fieldFirstName',
+	        display: {
+	            showAlways: true
+	        },
+	        eloqua: {
+	            name: 'C_FirstName'
+	        }
+	    },
+	    lastName: {
+	        name: 'lastName',
+	        container: '#fieldLastName',
+	        display: {
+	            showAlways: true
+	        },
+	        eloqua: {
+	            name: 'C_LastName'
+	        }
+	    },
+	    emailAddress: {
+	        name: 'emailAddress',
+	        container: '#fieldEmailAddress',
+	        display: {
+	            showAlways: true
+	        },
+	        eloqua: {
+	            name: 'C_EmailAddress'
+	        }
+	    }
+	};
+	
+	var InputFields = exports.InputFields = {
+	    company: {
+	        name: 'company',
+	        container: '#fieldCompany',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Company'
+	        }
+	    },
+	    country: {
+	        name: 'country',
+	        container: '#fieldCountry',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Country'
+	        }
+	    },
+	    zipPostal: {
+	        name: 'zipPostal',
+	        container: '#fieldZipPostal',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Zip_Postal'
+	        }
+	    },
+	    companySize: {
+	        name: 'companySize',
+	        container: '#fieldCompanySize',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Company_Size1'
+	        }
+	    },
+	    division: {
+	        name: 'division',
+	        container: '#fieldDivision',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Division1'
+	        }
+	    },
+	    jobRole: {
+	        name: 'jobRole',
+	        container: '#fieldJobRole',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Job_Role1'
+	        }
+	    },
+	    businessPhone: {
+	        name: 'businessPhone',
+	        container: '#fieldBusinessPhone',
+	        display: {},
+	        eloqua: {
+	            name: 'C_BusPhone'
+	        }
+	    },
+	    city: {
+	        name: 'city',
+	        container: '#fieldCity',
+	        display: {},
+	        eloqua: {
+	            name: 'C_City'
+	        }
+	    },
+	    address1: {
+	        name: 'address1',
+	        container: '#fieldAddress1',
+	        display: {},
+	        eloqua: {
+	            name: 'C_Address1'
+	        }
+	    }
+	
+	};
+
+/***/ }
+/******/ ]);
+//# sourceMappingURL=form.js.map
