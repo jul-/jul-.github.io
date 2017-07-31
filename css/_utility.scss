@@ -1,0 +1,28 @@
+.text-center{
+  text-align: center;
+}
+
+.mb20{
+  margin-bottom: 20px;
+}
+
+.block{
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.visible{
+  overflow: visible;
+  height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+
+  .block-xs{
+    display: block;
+  }
+}

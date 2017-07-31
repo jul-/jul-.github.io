@@ -1,0 +1,25 @@
+.btn{
+  display: inline-block;
+  height: auto;
+  border-radius: 4px;
+  line-height: 1.5em;
+  white-space: normal;
+  padding: 10px 12px;
+  margin: 1rem 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  color: #fff;
+  background-color: #eb6005;
+  text-decoration: none;
+  border: 0;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius:2px;
+}
+
+.btn:hover{
+  opacity: .8;
+}

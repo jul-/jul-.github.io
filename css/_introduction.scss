@@ -1,0 +1,25 @@
+#introduction{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgba(255, 255, 255,.5);
+
+  #description{
+    opacity: 1;
+    position: fixed;
+    width: 300px;
+    background: #fff;
+    min-height: 20px;
+    padding: 40px;
+    left: 50%;
+    margin-left: -190px;
+    top: 80px;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,.25);
+    z-index: 1000;
+  }
+
+}

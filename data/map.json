@@ -1,0 +1,259 @@
+{
+  "map": {
+    "onboarding": {
+      "rows": [
+        {
+          "slices": "3-18",
+          "images": "8-11"
+        },
+        {
+          "slices": "20-35",
+          "images": "24-30"
+        },
+        {
+          "slices": "36-51",
+          "images": "39-48"
+        },
+        {
+          "slices": "52-67",
+          "images": "54-66"
+        },
+        {
+          "slices": "68-83",
+          "images": "69-83"
+        },
+        {
+          "slices": "84-99",
+          "images": "84-99"
+        },
+        {
+          "slices": "100-115",
+          "images": "100-114"
+        },
+        {
+          "slices": "116-131",
+          "images": "119-128"
+        },
+        {
+          "slices": "132-147",
+          "images": "137-143"
+        },
+        {
+          "slices": "148-163",
+          "images": "155-158"
+        }
+      ],
+      "popups": [
+        {
+          "tile": 74,
+          "_x": 40,
+          "_y": 0,
+          "title": "Fachliche Einarbeitung",
+          "image": "image-74.jpg",
+          "subtitle": "Fischmarkt",
+          "text": "Eine fundierte fachliche Einarbeitung ist wichtig für ein schnelles Ankommen. Hier gilt es - Marktständen gleich - verschiedene Stationen und Personen zu benennen, die den neuen Mitarbeiter dabei unterstützen. Erfahren Sie in unserer Arbeitshilfe, wie Sie die fachliche Einarbeitung effizient gestalten.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/mitarbeiter-integration"
+        },
+        {
+          "tile": 59,
+          "_x": 80,
+          "_y": 160,
+          "title": "Onboarding im Unternehmen",
+          "image": "image-59.jpg",
+          "subtitle": "Boot",
+          "text": "Onboarding sieht überall anders aus. Eine gute Planung, klare Verantwortlichkeiten und nachhaltige Umsetzung sind dabei jedoch unerlässlich. Wichtig ist, dass es zum jeweiligen Unternehmen und dessen Mannschaft passt und somit authentisch ist. Eine breite Palette unterschiedlicher Onboarding-Maßnahmen finden Sie in unserer interaktiven Mindmap.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/onboarding-mindmap"
+        },
+        {
+          "tile":59,
+          "_x":253,
+          "_y":145,
+          "title": "Eintritt ins Unternehmen",
+          "image": "image-59-2.jpg",
+          "subtitle": "Steg",
+          "text": "Am 1. Arbeitstag sollte nichts dem Zufall überlassen werden. Bieten Sie dem neuen Mitarbeiter einen strukturierten Empfang an Bord. Lassen Sie sich von unserem Leitfaden inspirieren, wie Sie diesen wichtigen ersten Tag optimal gestalten können.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/erster-arbeitstag"
+        },
+        {
+          "tile":107,
+          "_x":-5,
+          "_y":10,
+          "title": "Konkurrenzunternehmen",
+          "image": "image-107.jpg",
+          "subtitle": "Piratenschiff",
+          "text": "Die Entscheidung für ein Unternehmen wird vom neuen Mitarbeiter auch häufig noch in letzter Minute rückgängig gemacht. Hier gilt es die Anfangsfluktuation aufgrund abwerbender Konkurrenzunternehmen möglichst gering zu halten, z.B. durch eine regelmäßige Kommunikation bereits vor dem ersten Arbeitstag. Welche Möglichkeiten sich hier anbieten, erfahren Sie in unserer Checkliste \"Kontaktmöglichkeiten\".",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/kontaktmoeglichkeiten"
+        },
+        {
+          "tile":94,
+          "_x":326.5,
+          "_y":327.5,
+          "title": "Soziale Integration",
+          "image": "image-111-1.jpg",
+          "subtitle": "Cafe",
+          "text": "Nur wer sich wohlfühlt, wird auch seine volle Leistung entfalten. Die soziale Integration spielt gerade in der Anfangsphase eine entscheidende Rolle. Die Verantwortung dafür tragen die Führungskraft, Pate und die Kollegen und sollte von diesen gemeinsam geplant und betrieben werden. Viele Anregungen finden Sie in unserem Maßnahmenkatalog zur Mitarbeiter-Integration.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/mitarbeiter-integration"
+        },{
+          "tile":25,
+          "_x":348.5,
+          "_y":368.5,
+          "title": "Selbstgesteuertes Lernen",
+          "image": "image-25-1.jpg",
+          "subtitle": "Kiosk",
+          "text": "Während der Einarbeitungszeit ist eine gute Vernetzung im Unternehmen die Voraussetzung für eine schnelle Integration. Hier ist der neue Mitarbeiter gefragt, sich auch selbst mit \"Lernhäppchen\" einzudecken. Sorgen Sie für ein attraktives Angebot an möglichst vielen Ecken.",
+          "button": "",
+          "url": ""
+        },
+        {
+          "tile":44,
+          "_x":151.5,
+          "_y":346.5,
+          "title": "HR Administration",
+          "image": "image-44.jpg",
+          "subtitle": "Behörde",
+          "text": "Ein bisschen Behörde muss auch in Zeiten von New Work bei HR noch sein: HR steuert und verantwortet den reibungslosen Ablauf des Onboardingprozesses. Damit Sie nichts vergessen, lesen Sie unseren Einarbeitungsplan für neue Mitarbeiter.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/einarbeitungsplan"
+        },
+        {
+          "tile":96,
+          "_x":371.5,
+          "_y":192.5,
+          "title": "Rollen und Zusammenarbeit",
+          "image": "image-97.jpg",
+          "subtitle": "Orchestrierung",
+          "text": "Erfolgreiche Einarbeitung ist wie ein Konzert: Jeder Beteiligte muss wissen, wann er seinen Einsatz hat! Stellen Sie sicher, dass geklärt ist, wer für was die Verantwortung übernimmt. Unsere Infografik gibt Ihnen einen Überblick über den gesamten Onboarding-Prozess.",
+          "button": "Kostenlose Infografik",
+          "url": "https://suite.haufe.de/onboarding-infografik"
+        },
+        {
+          "tile":56,
+          "_x":300.5,
+          "_y":111.5,
+          "title": "Erfolgsfaktoren",
+          "image": "image-56.jpg",
+          "subtitle": "Straßenlaternen",
+          "text": "Bringen Sie Licht ins Dunkel eines unstrukturierten Onboardingprozesses. Erfahren Sie in unserer Checkliste \"Erfolgsfaktoren\", wo Sie noch Optimierungspotenzial haben.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/erfolgsfaktoren-onboarding"
+        },
+        {
+          "tile":25,
+          "_x":292.5,
+          "_y":47.5,
+          "title": "Gestaltung digitale Onboarding Plattform",
+          "image": "image-25-2.jpg",
+          "subtitle": "Aussichtsplattform",
+          "text": "Unternehmen mit Weitblick haben eine digitale Onboarding-Plattform. Sie schafft rollenbasiert den notwendigen Überblick über Stand und Status der Einarbeitung, dient als zentrale Anlauf- und Informationsstelle und unterstützt nachhaltig bei der Integration des neuen Mitarbeiters. Wie eine Onboarding-Plattform aussehen kann, erfahren Sie in dem Leitfaden.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/onboarding-plattform"
+        },
+        {
+          "tile":44,
+          "_x":208.5,
+          "_y":356.5,
+          "title": "Übernahmeentscheidung Probezeit",
+          "image": "image-44-2.jpg",
+          "subtitle": "Anker",
+          "text": "Am Ende der Probezeit, bevor Sie also den Anker endgültig festmachen, sollte Ihre Übernahme-Entscheidung durch permanente, fundierte Feedbackgespräche abgesichert sein.",
+          "button": "",
+          "url": ""
+        },
+        {
+          "tile":64,
+          "_x":215.5,
+          "_y":395.5,
+          "title": "Feedback / Austausch",
+          "image": "image-64.jpg",
+          "subtitle": "Kreisverkehr",
+          "text": "Feedback ist eine runde Sache: Durch regelmäßigen Austausch Aller (Team, Führungskraft, Mitarbeiter, Pate & HR) decken Sie Lücken auf, können Lernprozesse stattfinden und Sie integrieren Erfahrungswissen des neuen Mitarbeiters. Kein Wachstum ohne Feedback!",
+          "button": "",
+          "url": ""
+        },
+        {
+          "tile":80,
+          "_x":85,
+          "_y":288.5,
+          "title": "Case Studies / Anwendungsberichte",
+          "image": "image-80.jpg",
+          "subtitle": "Litfassäule",
+          "text": "Großes Kino! Wie macht man so richtig exzellentes Onboarding? Was ist das \"Geheimrezept\"? Erfahren Sie in unserem Anwendungsbericht, wie es richtig geht!",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/digitales-onboarding"
+        },
+        {
+          "tile":43,
+          "_x":96.5,
+          "_y":29.5,
+          "title": "Training und Weiterbildung",
+          "image": "image-43.jpg",
+          "subtitle": "Schule",
+          "text": "Schule hört nicht mit dem Abschlusszeugnis auf! Bei der Einarbeitung geht es für den neuen Mitarbeiter erstmal um eins: LERNEN. Sei es  Fach- oder Branchenwissen, Unternehmenskultur, Systeme, Arbeitsprozesse und -mittel. Am Arbeitsplatz. Im Seminar. Durch Einweisung oder Selbststudium.",
+          "button": "",
+          "url": ""
+        },
+        {
+          "tile":111,
+          "_x":55.5,
+          "_y":44.5,
+          "title": "Compliance",
+          "image": "image-111-2.jpg",
+          "subtitle": "Polizei",
+          "text": "Wer garantiert eigentlich, dass beim Onboarding alles nach Recht, Ordnung und Gerechtigkeit abläuft? HR hat hier den Hut auf und stellt sicher, dass Auflagen durch AGG, Datenschutz und Arbeitsrecht (z.B. Vertragsgestaltung) berücksichtigt werden.",
+          "button": "",
+          "url": ""
+        },
+        {
+          "tile":60,
+          "_x":30.5,
+          "_y":281.5,
+          "title": "Krisensituation",
+          "image": "image-60.jpg",
+          "subtitle": "Erste Hilfe",
+          "text": "Es geht immer etwas schief! Sehen Sie nicht tatenlos zu, wenn es beim Onboarding klemmt! Werfen Sie den Rettungsring zu, z.B. wenn der neue Mitarbeiter mit einem Kollegen nicht klarkommt. Wie Sie hier unterstützen können, lesen Sie in unserem Notfallplan.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/einarbeitung-notfallplan"
+        },
+        {
+          "tile":59,
+          "_x":175,
+          "_y":210,
+          "title": "Pate",
+          "image": "image-59-3.jpg",
+          "subtitle": "Kollege",
+          "text": "Der Pate ist der erste und wichtigste Ansprechpartner des neuen Mitarbeites in allen Lebenslagen. Er hat vielfältige Aufgaben, u.a. ist er der \"best buddy\" der auch dafür sorgt, dass sich der Neue zu Hause fühlt. ",
+          "button": "",
+          "url": ""
+        },
+        {
+          "tile":59,
+          "_x":245.5,
+          "_y":268.5,
+          "title": "Vorgesetzter",
+          "image": "image-59-4.jpg",
+          "subtitle": "Führungskraft",
+          "text": "Die Verantwortung des Vorgesetzten ist es, den neuen Mitarbeiter so durch den Onboardingprozess zu lotsen, dass er schnellstmöglich vollwertiges Teammitglied und potenzieller Top Performer wird. Er legt das Fundament - und hält als Kapitän alle Fäden in der Hand! Was er alles beachten muss, zeigt Ihnen unsere Arbeitshilfe.",
+          "button": "Kostenloser Download",
+          "url": "https://elq.haufe.com/mitarbeiter-gewinnen/mitarbeiter-integration"
+        },
+        {
+          "tile":25,
+          "_x":185,
+          "_y":350,
+          "title": "Benchmarks und Messgrößen",
+          "image": "image-25-3.jpg",
+          "subtitle": "Controlling",
+          "text": "Wenn wir nicht wissen, wo wir hinwollen, brauchen wir uns nicht zu wundern, wo wir \"landen\"! Definieren Sie beim Onboarding Ihre KPI's und dann: Messen Sie sie. Ständig. Und möglichst automatisiert. Nur dann können Sie auch effektiv gegensteuern!",
+          "button": "",
+          "url": ""
+        }
+      ]
+
+    }
+  }
+}
