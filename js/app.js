@@ -143,7 +143,7 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
-        console.log('resetMap');
+        console.log('resetMap!!!');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
