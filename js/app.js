@@ -148,7 +148,7 @@ var App = Backbone.View.extend({
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), 0.4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.to( $(this.el), 0.4, {css: {scale: this.screen_ratio}});
     },
     focusOn: function(data){
         console.log('focusOn');
