@@ -143,12 +143,12 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
-        console.log('resetMap 11');
+        console.log('resetMap 12');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.set( $(this.el), {css: {autoKill: false, scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.set( $(this.el), {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
 
     },
     focusOn: function(data){
