@@ -131,19 +131,20 @@ var App = Backbone.View.extend({
         this.origin_x = ((screen_width / 2) - (hit_x / this.screen_ratio)).toFixed(2);
         this.origin_y = ((screen_height / 2) - (hit_y / this.screen_ratio)).toFixed(2);
 
-        // this.origin_y *= -1;
-        // this.origin_x *= -1;
+        this.origin_y *= -1;
+        this.origin_x *= -1;
 
         this.map_active = true;
         $(this.el).addClass('active');
-        TweenMax.to( $(this.el), 1.4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: this.origin_x, y: this.origin_y}});
+        TweenMax.to( $(this.el), 1,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
 
     },
     resetMap: function(){
-        console.log('resetmap 7');
+        this.origin_y = 0;
+        this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), 1.4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
+        TweenMax.to( $(this.el), 1, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
     },
     focusOn: function(data){
         var offset = $('#tile-' + data.tile).offset();
@@ -158,7 +159,7 @@ var App = Backbone.View.extend({
             this.origin_x = (position.left + data._x - screen_width/2).toFixed(2);
             this.origin_y = (position.top + data._y - screen_height/2).toFixed(2);
 
-            TweenMax.to( $(this.el), 1.5, {css: {x: -this.origin_x, y: -this.origin_y}});
+            TweenMax.to( $(this.el), 1, {css: {x: -this.origin_x, y: -this.origin_y}});
 
             Backbone.trigger('content', {popup: data});
         }
