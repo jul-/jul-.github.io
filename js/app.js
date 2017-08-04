@@ -146,7 +146,7 @@ var App = Backbone.View.extend({
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), .4, {css: {backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
+        TweenMax.set( $(this.el), {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
     },
     focusOn: function(data){
         var offset = $('#tile-' + data.tile).offset();
