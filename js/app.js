@@ -120,6 +120,7 @@ var App = Backbone.View.extend({
     },
     activateMap: function($event){
 
+        console.log('activateMap 1');
         if(this.map_active) return;
 
         var screen_width = $(window).width();
@@ -140,11 +141,12 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
+        console.log('resetMap 1');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), .4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.to( $(this.el), .4, {css: {backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
     },
     focusOn: function(data){
         var offset = $('#tile-' + data.tile).offset();
