@@ -136,16 +136,16 @@ var App = Backbone.View.extend({
 
         this.map_active = true;
         $(this.el).addClass('active');
-        TweenMax.to( $(this.el), .4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
+        TweenMax.to( $(this.el), .4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
 
     },
     resetMap: function(){
-        console.log('resetmap 4');
+        console.log('resetmap 5');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), .4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
+        TweenMax.to( $(this.el), .4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: this.origin_x, y: this.origin_y}});
     },
     focusOn: function(data){
         var offset = $('#tile-' + data.tile).offset();
