@@ -140,7 +140,7 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
-        console.log('resetmap 5');
+        console.log('resetmap 6');
         this.map_active = false;
         $(this.el).removeClass('active');
         TweenMax.to( $(this.el), .4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
