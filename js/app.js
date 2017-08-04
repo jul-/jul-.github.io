@@ -120,7 +120,7 @@ var App = Backbone.View.extend({
     },
     activateMap: function($event){
 
-        console.log('activateMap 1');
+        console.log('activateMap 2');
         if(this.map_active) return;
 
         var screen_width = $(window).width();
@@ -137,11 +137,11 @@ var App = Backbone.View.extend({
 
         this.map_active = true;
         $(this.el).addClass('active');
-        TweenMax.to( $(this.el), .4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.set( $(this.el),{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
 
     },
     resetMap: function(){
-        console.log('resetMap 1');
+        console.log('resetMap 2');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
@@ -161,7 +161,7 @@ var App = Backbone.View.extend({
             this.origin_x = (position.left + data._x - screen_width/2).toFixed(2);
             this.origin_y = (position.top + data._y - screen_height/2).toFixed(2);
 
-            TweenMax.to( $(this.el), .5, {css: {x: -this.origin_x, y: -this.origin_y}});
+            TweenMax.set( $(this.el), {css: {x: -this.origin_x, y: -this.origin_y}});
 
             Backbone.trigger('content', {popup: data});
         }
