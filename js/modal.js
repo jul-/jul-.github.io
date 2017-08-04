@@ -1,7 +1,7 @@
 var Modal = Backbone.View.extend({
 
     el: $('#modal'),
-    template: _.template("<h3><%= title %></h3><h4 class='mb20'><%= subtitle %></h4> <div class='image text-center'><img src='img/popups/<%= image %>'></div> <p><%= text %></p> <% if (url && url.length > 0) { %><a href='<%= url %>' target='_blank' class='btn'>Download</a><% } %>"),
+    template: _.template("<h3><%= title %></h3><h4 class='mb20'><%= subtitle %></h4> <div class='image text-center'><img src='img/popups/<%= image %>'></div> <p><%= text %></p> <% if (url && url.length > 0) { %><a href='<%= url %>' target='_blank' class='btn'><%= button %></a><% } %>"),
 
     initialize: function() {
         Backbone.on('content',  _.bind(this.showModal, this));

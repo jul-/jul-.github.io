@@ -120,9 +120,6 @@ var App = Backbone.View.extend({
     },
     activateMap: function($event){
 
-        console.log('activateMap');
-
-
         if(this.map_active) return;
 
         var screen_width = $(window).width();
@@ -139,20 +136,17 @@ var App = Backbone.View.extend({
 
         this.map_active = true;
         $(this.el).addClass('active');
-        TweenMax.to( $(this.el), 0.4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.to( $(this.el), .4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
 
     },
     resetMap: function(){
-        console.log('resetMap 14');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), 0.4, {css: {scale: 0.25, backfaceVisibility: 'hidden', z: 0, x: 0, y: 0}});
-
+        TweenMax.to( $(this.el), .4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
     },
     focusOn: function(data){
-        console.log('focusOn');
         var offset = $('#tile-' + data.tile).offset();
         var position = $('#tile-' + data.tile).position();
         var screen_width = $(window).width();
@@ -165,7 +159,7 @@ var App = Backbone.View.extend({
             this.origin_x = (position.left + data._x - screen_width/2).toFixed(2);
             this.origin_y = (position.top + data._y - screen_height/2).toFixed(2);
 
-            TweenMax.to( $(this.el), 0.5, {css: {x: -this.origin_x, y: -this.origin_y}});
+            TweenMax.to( $(this.el), .5, {css: {x: -this.origin_x, y: -this.origin_y}});
 
             Backbone.trigger('content', {popup: data});
         }
@@ -202,7 +196,7 @@ var App = Backbone.View.extend({
         $event.stopPropagation();
     },
     onWheel: function($event){
-        if($event.originalEvent.deltaY > 0) {
+        if($event.originalEvent.deltaY < 0) {
             if(!this.map_active)
                 this.activateMap();
         }
