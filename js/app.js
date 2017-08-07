@@ -76,6 +76,7 @@ var App = Backbone.View.extend({
         });
     },
     buildMap: function(){
+        console.log('buildMap');
         var map = this.collection.toJSON();
         var rows = _.first(map).rows;
         var that = this;
@@ -92,7 +93,7 @@ var App = Backbone.View.extend({
                 element);
         });
 
-        TweenMax.set( $(this.el), {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', perspective: 1000, z: -3, transformOrigin: "0% 0%", force3D:true}});
+        TweenMax.set( $(this.el), {css: {scale: this.screen_ratio, perspective: 1000, z: -3, transformOrigin: "0% 0%", force3D:true}});
     },
     createRow: function(start, end, image_start, image_end, model){
 
@@ -140,7 +141,7 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
-        console.log('resetMap 22');
+        console.log('resetMap 23');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
