@@ -172,7 +172,7 @@ body.modal #app {
   display: block;
   -moz-animation: pulse-large 1s infinite;
   /*-webkit-animation: pulse-large 1s infinite;*/
-  animation: pulse-large 1s infinite;
+  /*animation: pulse-large 1s infinite;*/
   -webkit-backface-visibility: hidden;
   /*-webkit-transform: translateZ(0) scale(1, 1); */
 }
@@ -192,7 +192,7 @@ body.modal #app {
   margin-left: -1.5rem;
   -moz-animation: pulse 1s infinite;
   /*-webkit-animation: pulse 1s infinite;*/
-  animation: pulse 1s infinite;
+  /*animation: pulse 1s infinite;*/
   -webkit-backface-visibility: hidden;
   /*-webkit-transform: translateZ(0) scale(1, 1);*/
 }
