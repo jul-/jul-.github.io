@@ -120,7 +120,7 @@ var App = Backbone.View.extend({
     },
     activateMap: function($event){
 
-        console.log('activateMap');
+        console.log('activateMap 2');
 
         if(this.map_active) return;
 
@@ -142,7 +142,7 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
-        console.log('resetMap');
+        console.log('resetMap 2');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
