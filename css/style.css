@@ -118,7 +118,7 @@ body.modal #app {
     /*-moz-transition: opacity .5s;*/
     /*-ms-transition: opacity .5s;*/
     /*-o-transition: opacity .5s;*/
-    transition: opacity .5s;
+    /*transition: opacity .5s;*/
     max-width: 780px;
     min-width: 750px;
     top: -4000px;
@@ -293,8 +293,9 @@ body.modal #modal-container {
   #modal-container #modal {
     opacity: 0;
     top: -100px;
-    -webkit-transition: top .5s;
-    transition: top .5s;}
+    /*-webkit-transition: top .5s;*/
+    /*transition: top .5s;*/
+  }
 
 .btn {
   display: inline-block;
