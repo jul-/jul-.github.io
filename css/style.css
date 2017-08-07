@@ -169,7 +169,7 @@ body.modal #app {
   -webkit-animation: pulse-large 1s infinite;
   animation: pulse-large 1s infinite;
   -webkit-backface-visibility: hidden;
-  /*-webkit-transform: translateZ(0) scale(1, 1);*/ }
+  -webkit-transform: translateZ(0) scale(1, 1); }
 
 .click-map:hover:before {
   -moz-animation: bounce 1s infinite;
@@ -187,8 +187,7 @@ body.modal #app {
   -webkit-animation: pulse 1s infinite;
   animation: pulse 1s infinite;
   -webkit-backface-visibility: hidden;
-  /*-webkit-transform: translateZ(0) scale(1, 1); */
-}
+  -webkit-transform: translateZ(0) scale(1, 1); }
 .active .click-map:hover:before {
   -moz-animation: bounce 1s infinite;
   -webkit-animation: bounce 1s infinite;

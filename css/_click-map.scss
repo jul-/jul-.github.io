@@ -88,8 +88,8 @@
   -moz-animation: pulse-large 1s infinite;
   -webkit-animation: pulse-large 1s infinite;
   animation: pulse-large 1s infinite;
-  //-webkit-backface-visibility: hidden;
-  //-webkit-transform: translateZ(0) scale(1.0, 1.0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
 .click-map:hover:before{
@@ -109,8 +109,8 @@
     -moz-animation: pulse 1s infinite;
     -webkit-animation: pulse 1s infinite;
     animation: pulse 1s infinite;
-    //-webkit-backface-visibility: hidden;
-    //-webkit-transform: translateZ(0) scale(1.0, 1.0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
   }
   .click-map:hover:before{
     -moz-animation:bounce 1s infinite;

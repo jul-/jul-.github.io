@@ -120,6 +120,8 @@ var App = Backbone.View.extend({
     },
     activateMap: function($event){
 
+        console.log('activateMap');
+
         if(this.map_active) return;
 
         var screen_width = $(window).width();
@@ -136,16 +138,16 @@ var App = Backbone.View.extend({
 
         this.map_active = true;
         $(this.el).addClass('active');
-        TweenMax.to( $(this.el), 1,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.to( $(this.el), .4,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
 
     },
     resetMap: function(){
-        console.log('resetMap 14');
+        console.log('resetMap');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), 1, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+        TweenMax.to( $(this.el), .4, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
     },
     focusOn: function(data){
         var offset = $('#tile-' + data.tile).offset();
@@ -160,7 +162,7 @@ var App = Backbone.View.extend({
             this.origin_x = (position.left + data._x - screen_width/2).toFixed(2);
             this.origin_y = (position.top + data._y - screen_height/2).toFixed(2);
 
-            TweenMax.to( $(this.el), 1, {css: {x: -this.origin_x, y: -this.origin_y}});
+            TweenMax.to( $(this.el), .5, {css: {x: -this.origin_x, y: -this.origin_y}});
 
             Backbone.trigger('content', {popup: data});
         }
@@ -262,6 +264,7 @@ var App = Backbone.View.extend({
         return false;
     },
     render: function(){
+        console.log('render');
         //this.el.style.transform = "translate(" + -(this.origin_x + this.delta_x) + "px , " + -(this.origin_y + this.delta_y) + "px)"
         TweenMax.set($(this.el), {'x': -(this.origin_x + this.delta_x) + 'px', 'y': -(this.origin_y + this.delta_y) + 'px'});
     }
