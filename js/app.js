@@ -119,9 +119,7 @@ var App = Backbone.View.extend({
         $(this.el).append(row[0]);
     },
     activateMap: function($event){
-
-        console.log('activateMap');
-
+        
         if(this.map_active) return;
 
         var screen_width = $(window).width();
@@ -142,7 +140,7 @@ var App = Backbone.View.extend({
 
     },
     resetMap: function(){
-        console.log('resetMap');
+        console.log('resetMap 3');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
