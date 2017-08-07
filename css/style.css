@@ -52,9 +52,10 @@ p {
 #app {
   position: absolute;
   z-index: 1;
-  -webkit-animation: blur_out .25s;
-  animation: blur_out .25s;
-  animation-fill-mode: forwards; }
+  /*-webkit-animation: blur_out .25s;*/
+  /*animation: blur_out .25s;*/
+  /*animation-fill-mode: forwards;*/
+}
 
 body.modal #app {
   -webkit-animation: blur_in .5s;
