@@ -178,9 +178,9 @@ body.modal #app {
 }
 
 .click-map:hover:before {
-  -moz-animation: bounce 1s infinite;
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 1s infinite;
+  /*-moz-animation: bounce 1s infinite;*/
+  /*-webkit-animation: bounce 1s infinite;*/
+  /*animation: bounce 1s infinite;*/
 }
 
 .active .click-map:before {
@@ -197,9 +197,9 @@ body.modal #app {
   /*-webkit-transform: translateZ(0) scale(1, 1);*/
 }
 .active .click-map:hover:before {
-  -moz-animation: bounce 1s infinite;
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 1s infinite;
+  /*-moz-animation: bounce 1s infinite;*/
+  /*-webkit-animation: bounce 1s infinite;*/
+  /*animation: bounce 1s infinite;*/
 }
 
 @keyframes bounce {
