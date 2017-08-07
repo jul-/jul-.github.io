@@ -50,7 +50,7 @@ p {
     z-index: 1000; }
 
 #app {
-  position: absolute;
+  /*position: absolute;*/
   z-index: 1;
   /*-webkit-animation: blur_out .25s;*/
   /*animation: blur_out .25s;*/
@@ -66,26 +66,26 @@ body.modal #app {
 #app.active {
   cursor: move; }
 
-@-webkit-keyframes blur_in {
-  1% {
-    -webkit-filter: blur(0px); }
-  0%, 100% {
-    -webkit-filter: blur(5px); } }
-@keyframes blur_in {
-  0% {
-    filter: blur(0); }
-  100% {
-    filter: blur(5px); } }
-@-webkit-keyframes blur_out {
-  0% {
-    -webkit-filter: blur(5px); }
-  100% {
-    -webkit-filter: blur(0); } }
-@keyframes blur_out {
-  0% {
-    filter: blur(5px); }
-  100% {
-    filter: blur(0); } }
+/*@-webkit-keyframes blur_in {*/
+  /*1% {*/
+    /*-webkit-filter: blur(0px); }*/
+  /*0%, 100% {*/
+    /*-webkit-filter: blur(5px); } }*/
+/*@keyframes blur_in {*/
+  /*0% {*/
+    /*filter: blur(0); }*/
+  /*100% {*/
+    /*filter: blur(5px); } }*/
+/*@-webkit-keyframes blur_out {*/
+  /*0% {*/
+    /*-webkit-filter: blur(5px); }*/
+  /*100% {*/
+    /*-webkit-filter: blur(0); } }*/
+/*@keyframes blur_out {*/
+  /*0% {*/
+    /*filter: blur(5px); }*/
+  /*100% {*/
+    /*filter: blur(0); } }*/
 .row {
   overflow-x: visible;
   overflow-y: visible;
