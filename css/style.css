@@ -149,9 +149,11 @@ body.modal #app {
     display: block;
     opacity: 1;
     top: auto;
-    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); } }
+    /*-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);*/
+    /*-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);*/
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);*/
+  }
+}
 .click-map:before {
   position: relative;
   content: '\f0d7';
@@ -168,16 +170,18 @@ body.modal #app {
   background-color: #eb6005;
   border-radius: 9rem;
   display: block;
-  -moz-animation: pulse-large 1s infinite;
-  -webkit-animation: pulse-large 1s infinite;
-  animation: pulse-large 1s infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1, 1); }
+  /*-moz-animation: pulse-large 1s infinite;*/
+  /*-webkit-animation: pulse-large 1s infinite;*/
+  /*animation: pulse-large 1s infinite;*/
+  /*-webkit-backface-visibility: hidden;*/
+  /*-webkit-transform: translateZ(0) scale(1, 1); */
+}
 
 .click-map:hover:before {
-  -moz-animation: bounce 1s infinite;
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 1s infinite; }
+  /*-moz-animation: bounce 1s infinite;*/
+  /*-webkit-animation: bounce 1s infinite;*/
+  /*animation: bounce 1s infinite;*/
+}
 
 .active .click-map:before {
   font-size: 2rem;
@@ -186,15 +190,17 @@ body.modal #app {
   height: 3rem;
   margin-top: 0;
   margin-left: -1.5rem;
-  -moz-animation: pulse 1s infinite;
-  -webkit-animation: pulse 1s infinite;
-  animation: pulse 1s infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1, 1); }
+  /*-moz-animation: pulse 1s infinite;*/
+  /*-webkit-animation: pulse 1s infinite;*/
+  /*animation: pulse 1s infinite;*/
+  /*-webkit-backface-visibility: hidden;*/
+  /*-webkit-transform: translateZ(0) scale(1, 1);*/
+}
 .active .click-map:hover:before {
-  -moz-animation: bounce 1s infinite;
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 1s infinite; }
+  /*-moz-animation: bounce 1s infinite;*/
+  /*-webkit-animation: bounce 1s infinite;*/
+  /*animation: bounce 1s infinite;*/
+}
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
