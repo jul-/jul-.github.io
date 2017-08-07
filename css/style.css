@@ -338,8 +338,7 @@ body.modal #modal-container {
 @media (max-width: 767px) {
 
   #introduction #description {
-    top:0;
-    padding: 10px; }
+    top:0;}
 
   .hidden-xs {
     display: none !important; }
