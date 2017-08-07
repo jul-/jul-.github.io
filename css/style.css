@@ -58,9 +58,10 @@ p {
 }
 
 body.modal #app {
-  -webkit-animation: blur_in .5s;
-  animation: blur_in .5s;
-  animation-fill-mode: forwards; }
+  /*-webkit-animation: blur_in .5s;*/
+  /*animation: blur_in .5s;*/
+  /*animation-fill-mode: forwards;*/
+}
 
 #app.active {
   cursor: move; }
