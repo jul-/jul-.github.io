@@ -50,7 +50,7 @@ p {
     z-index: 1000; }
 
 #app {
-  position: absolute;
+  /*position: absolute;*/
   z-index: 1;
   /*-webkit-animation: blur_out .25s;*/
   /*animation: blur_out .25s;*/
