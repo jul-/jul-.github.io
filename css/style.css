@@ -336,6 +336,11 @@ body.modal #modal-container {
   height: 100vh; }
 
 @media (max-width: 767px) {
+
+  #introduction #description {
+    top:0;
+    padding: 10px; }
+
   .hidden-xs {
     display: none !important; }
 
