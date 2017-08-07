@@ -170,9 +170,9 @@ body.modal #app {
   background-color: #eb6005;
   border-radius: 9rem;
   display: block;
-  /*-moz-animation: pulse-large 1s infinite;*/
+  -moz-animation: pulse-large 1s infinite;
   /*-webkit-animation: pulse-large 1s infinite;*/
-  /*animation: pulse-large 1s infinite;*/
+  animation: pulse-large 1s infinite;
   -webkit-backface-visibility: hidden;
   /*-webkit-transform: translateZ(0) scale(1, 1); */
 }
@@ -190,9 +190,9 @@ body.modal #app {
   height: 3rem;
   margin-top: 0;
   margin-left: -1.5rem;
-  /*-moz-animation: pulse 1s infinite;*/
+  -moz-animation: pulse 1s infinite;
   /*-webkit-animation: pulse 1s infinite;*/
-  /*animation: pulse 1s infinite;*/
+  animation: pulse 1s infinite;
   -webkit-backface-visibility: hidden;
   /*-webkit-transform: translateZ(0) scale(1, 1);*/
 }
