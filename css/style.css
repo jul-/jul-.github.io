@@ -95,7 +95,7 @@ body.modal #app {
   display: inline-block;
   width: 400px;
   height: 400px;
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
 }
 
 .click-map {
@@ -169,7 +169,7 @@ body.modal #app {
   -moz-animation: pulse-large 1s infinite;
   -webkit-animation: pulse-large 1s infinite;
   animation: pulse-large 1s infinite;
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   -webkit-transform: translateZ(0) scale(1, 1); }
 
 .click-map:hover:before {
