@@ -28,13 +28,20 @@ var App = Backbone.View.extend({
     },
 
     initialize: function() {
+        this.iOS = parseFloat(
+          ('' + (/CPU.*OS ([0-9_]{1,5})|(CPU like).*AppleWebKit.*Mobile/i.exec(navigator.userAgent) || [0,''])[1])
+            .replace('undefined', '3_2').replace('_', '.').replace('_', '')
+        ) || false;
+
+        this.tween_timing = this.iOS ? 0 : 0.5;
+
         this.collection = new MapCollection();
 
-        $(window).on('mousemove', _.bind(this.onMouseMove, this));
-        $(window).on('mousewheel wheel', _.bind(this.onWheel, this));
-        $(window).on('mouseup', _.bind(this.onStop, this));
-        $(window).on('mouseout',_.bind(this.onStop, this));
-        $(window).on('touchend',_.bind(this.onStop, this));
+        $("#app").on('mousewheel wheel', _.bind(this.onWheel, this));
+        $("#app").on('mousemove', _.bind(this.onMouseMove, this));
+        $("#app").on('mouseup', _.bind(this.onStop, this));
+        $("#app").on('mouseout',_.bind(this.onStop, this));
+        $("#app").on('touchend',_.bind(this.onStop, this));
         //$(window).on('resize',_.bind(this.recalculateScreen, this));
 
         Backbone.on('mapIn',  _.bind(this.activateMap, this));
@@ -44,12 +51,11 @@ var App = Backbone.View.extend({
 
         $('#btn-start').on('click',_.bind(this.onInit, this));
 
-        this.screen_ratio = (100/ 7300 * ($(document.body).width() - $('#legend').width())) / 100;
-        this.screen_ratio = this.screen_ratio < .1 ? .1 : this.screen_ratio.toFixed(2);
+        this.recalculateScreen();
         this.fetchMap();
     },
     onInit: function($event){
-        TweenMax.to($('#introduction'), .5, {autoAlpha: 0});
+        TweenMax.to($('#introduction'), this.tween_timing, {autoAlpha: 0});
 
         //Let tile 59 be starting point
         var e = new jQuery.Event("click");
@@ -61,7 +67,9 @@ var App = Backbone.View.extend({
         $event.preventDefault();
     },
     recalculateScreen: function(){
-        this.screen_ratio = (100/ 7300 * ($(document.body).width() - $('#legend').width())) / 100;
+      this.screen_ratio = (100/ 7300 * ($(document.body).width() - $('#legend').width())) / 100;
+      if (this.iOS) this.screen_ratio = parseFloat(this.screen_ratio < .2 ? .2 : this.screen_ratio.toFixed(2));
+      else this.screen_ratio = parseFloat(this.screen_ratio < .1 ? .1 : this.screen_ratio.toFixed(2));
     },
     fetchMap: function() {
         var that = this;
@@ -76,7 +84,6 @@ var App = Backbone.View.extend({
         });
     },
     buildMap: function(){
-        console.log('buildMap');
         var map = this.collection.toJSON();
         var rows = _.first(map).rows;
         var that = this;
@@ -93,7 +100,7 @@ var App = Backbone.View.extend({
                 element);
         });
 
-        TweenMax.set( $(this.el), {css: {scale: this.screen_ratio, perspective: 1000, z: -3, transformOrigin: "0% 0%", force3D:true}});
+        TweenMax.set( $(this.el), {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', perspective: 1000, z: -3, transformOrigin: "0% 0%", force3D:true}});
     },
     createRow: function(start, end, image_start, image_end, model){
 
@@ -123,30 +130,35 @@ var App = Backbone.View.extend({
 
         if(this.map_active) return;
 
-        var screen_width = $(window).width();
+        var screen_width = $(window).width() - $("#legend").width();
         var screen_height = $(window).height();
 
         var hit_x = $event !== undefined ? $event.clientX : screen_width / 2;
         var hit_y = $event !== undefined ? $event.clientY : screen_height / 2;
 
-        this.origin_x = ((screen_width / 2) - (hit_x / this.screen_ratio)).toFixed(2);
-        this.origin_y = ((screen_height / 2) - (hit_y / this.screen_ratio)).toFixed(2);
+        this.origin_x = parseInt((screen_width / 2) - (hit_x / this.screen_ratio));
+        this.origin_y = parseInt((screen_height / 2) - (hit_y / this.screen_ratio));
 
         this.origin_y *= -1;
         this.origin_x *= -1;
 
         this.map_active = true;
         $(this.el).addClass('active');
-        TweenMax.to( $(this.el), 1,{css:{scale:1, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
+
+        //this.el.style.transformOrigin = "0% 0% 0px";
+        //this.el.style.transform = "translate3d("+(-this.origin_x)+"px, "+(-this.origin_y)+"px, -3px) scale(1, 1)";
+
+        TweenMax.to( $(this.el), this.tween_timing,{css:{scale:1, backfaceVisibility: 'hidden', z: -3, x: -this.origin_x, y: -this.origin_y}});
 
     },
     resetMap: function(){
-        console.log('resetMap 23');
         this.origin_y = 0;
         this.origin_x = 0;
         this.map_active = false;
         $(this.el).removeClass('active');
-        TweenMax.to( $(this.el), 1, {css: {scale: 0.25,  z: 0, x: 0, y: 0}});
+        //this.el.style.transformOrigin = "0% 0% 0px";
+        //this.el.style.transform = "translate3d(0px, 0px, 0px) scale(0.2, 0.2)";
+        TweenMax.to( $(this.el), this.tween_timing, {css: {scale: this.screen_ratio, backfaceVisibility: 'hidden', z: 0, x: -this.origin_x, y: -this.origin_y}});
     },
     focusOn: function(data){
         var offset = $('#tile-' + data.tile).offset();
@@ -158,10 +170,10 @@ var App = Backbone.View.extend({
             this.activateMap({clientX: offset.left + data._x * this.screen_ratio, clientY: offset.top + data._y * this.screen_ratio});
         else{
 
-            this.origin_x = (position.left + data._x - screen_width/2).toFixed(2);
-            this.origin_y = (position.top + data._y - screen_height/2).toFixed(2);
+            this.origin_x = parseInt(position.left + data._x - screen_width/2);
+            this.origin_y = parseInt(position.top + data._y - screen_height/2);
 
-            TweenMax.to( $(this.el), 1, {css: {x: -this.origin_x, y: -this.origin_y}});
+            TweenMax.to( $(this.el), this.tween_timing, {css: {x: -this.origin_x, y: -this.origin_y}});
 
             Backbone.trigger('content', {popup: data});
         }
@@ -254,6 +266,9 @@ var App = Backbone.View.extend({
             this.delta_x = delta_x;
     },
     onStop: function($event){
+        //prevent end of dragging when mous is outside of current tile
+        if ($event.originalEvent.type == "mouseout" && ($event.relatedTarget && $event.relatedTarget.className == "tile")) return;
+
         this.move_active = false;
         this.origin_x += this.delta_x;
         this.origin_y += this.delta_y;
@@ -263,7 +278,6 @@ var App = Backbone.View.extend({
         return false;
     },
     render: function(){
-        console.log('render');
         //this.el.style.transform = "translate(" + -(this.origin_x + this.delta_x) + "px , " + -(this.origin_y + this.delta_y) + "px)"
         TweenMax.set($(this.el), {'x': -(this.origin_x + this.delta_x) + 'px', 'y': -(this.origin_y + this.delta_y) + 'px'});
     }
