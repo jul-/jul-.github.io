@@ -28,8 +28,10 @@ var TileView = Backbone.View.extend({
         this.$el.addClass('tile');
         this.$el.attr('id', "tile-" + this.options.number);
 
+
         if(this.options.image_active)
         this.$el.css('background-image', "url('img/slices-onboarding/images/onboarding_" + formattedNumber.toString() + ".jpg')");
+
 
         return this;
     },
@@ -45,8 +47,6 @@ var TileView = Backbone.View.extend({
         output.tile = this.options.number;
         output._x = x;
         output._y = y;
-
-        console.log(JSON.stringify(output));
     }
 
 

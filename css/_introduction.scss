@@ -22,4 +22,15 @@
     z-index: 1000;
   }
 
+
+  @media (max-width: 767px) {
+    #description{
+      width: 95%;
+      max-width: 480px;
+      margin-left: 0;
+      left: 1%;
+      top: 15px;
+      padding: 20px;
+    }
+  }
 }

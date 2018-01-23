@@ -1,7 +1,7 @@
 .click-map{
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0);
   z-index: 10;
@@ -18,12 +18,12 @@
     -ms-transition: opacity .5s;
     -o-transition: opacity .5s;
     transition: opacity .5s;
-    max-width: 780px;
-    min-width: 750px;
-    top: -4000px;
+    max-width: 400px;
+    min-width: 300px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
+    pointer-events: none;
 
     img{
       width: 100%;
@@ -34,7 +34,7 @@
       width: 100%;
       white-space: normal;
       font-family: 'Caveat Brush', cursive;
-      font-size: 5.4rem;
+      font-size: 2.4rem;
     }
   }
 }
@@ -42,7 +42,7 @@
 .active{
   .click-map{
     .tooltip{
-      max-width: 180px;
+      max-width: 200px;
       min-width: 150px;
       padding: 12px;
 
@@ -69,6 +69,9 @@
   }
 }
 
+/*
+uncomment for full-version
+
 .click-map:before{
   position: relative;
   content: '\f0d7';
@@ -90,6 +93,29 @@
   animation: pulse-large 1s infinite;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1.0, 1.0);
+} */
+
+.click-map:before{
+  position: relative;
+  content: '\f0d7';
+  font-family: 'FontAwesome';
+  color: white;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: -3rem;
+  text-align: center;
+  left: 50%;
+  margin-left: -2.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #eb6005;
+  border-radius: 9rem;
+  display: block;
+  -moz-animation: pulse-large 1s infinite;
+  -webkit-animation: pulse-large 1s infinite;
+  animation: pulse-large 1s infinite;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
 }
 
 .click-map:hover:before{
@@ -99,6 +125,7 @@
 }
 
 .active {
+  /* uncomment für full-version
   .click-map:before{
     font-size: 2rem;
     line-height: 3rem;
@@ -106,6 +133,19 @@
     height: 3rem;
     margin-top: 0;
     margin-left: -1.5rem;
+    -moz-animation: pulse 1s infinite;
+    -webkit-animation: pulse 1s infinite;
+    animation: pulse 1s infinite;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  }*/
+  .click-map:before{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0;
+    margin-left: -.75rem;
     -moz-animation: pulse 1s infinite;
     -webkit-animation: pulse 1s infinite;
     animation: pulse 1s infinite;

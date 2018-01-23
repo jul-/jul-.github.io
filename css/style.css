@@ -1,12 +1,6 @@
+@charset "UTF-8";
 html, body {
-  font-size: 16px;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
-}
+  font-size: 16px; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -19,13 +13,13 @@ h3 {
   font-weight: bold;
   margin: 0;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: 'Caveat Brush', cursive; }
 
 h4 {
   font-weight: normal;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-align: center;
   color: #555; }
 
@@ -55,6 +49,14 @@ p {
     top: 80px;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
     z-index: 1000; }
+  @media (max-width: 767px) {
+    #introduction #description {
+      width: 95%;
+      max-width: 480px;
+      margin-left: 0;
+      left: 1%;
+      top: 15px;
+      padding: 20px; } }
 
 #app {
   position: absolute;
@@ -97,17 +99,26 @@ body.modal #app {
   white-space: nowrap;
   font-size: 0; }
 
-.tile {
+/* uncomment for full-sizing
+.tile{
   position: relative;
   display: inline-block;
   width: 400px;
   height: 400px;
+  -webkit-backface-visibility: hidden;
+}*/
+.tile {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
   -webkit-backface-visibility: hidden; }
 
 .click-map {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0);
   z-index: 10; }
@@ -123,12 +134,12 @@ body.modal #app {
     -ms-transition: opacity .5s;
     -o-transition: opacity .5s;
     transition: opacity .5s;
-    max-width: 780px;
-    min-width: 750px;
-    top: -4000px;
+    max-width: 400px;
+    min-width: 300px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
-    border-radius: 2px; }
+    border-radius: 2px;
+    pointer-events: none; }
     .click-map .tooltip img {
       width: 100%;
       height: auto; }
@@ -136,10 +147,10 @@ body.modal #app {
       width: 100%;
       white-space: normal;
       font-family: 'Caveat Brush', cursive;
-      font-size: 5.4rem; }
+      font-size: 2.4rem; }
 
 .active .click-map .tooltip {
-  max-width: 180px;
+  max-width: 200px;
   min-width: 150px;
   padding: 12px; }
   .active .click-map .tooltip h4 {
@@ -156,7 +167,10 @@ body.modal #app {
     -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.25); } }
-.click-map:before {
+/*
+uncomment for full-version
+
+.click-map:before{
   position: relative;
   content: '\f0d7';
   font-family: 'FontAwesome';
@@ -176,6 +190,28 @@ body.modal #app {
   -webkit-animation: pulse-large 1s infinite;
   animation: pulse-large 1s infinite;
   -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+} */
+.click-map:before {
+  position: relative;
+  content: '\f0d7';
+  font-family: 'FontAwesome';
+  color: white;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: -3rem;
+  text-align: center;
+  left: 50%;
+  margin-left: -2.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #eb6005;
+  border-radius: 9rem;
+  display: block;
+  -moz-animation: pulse-large 1s infinite;
+  -webkit-animation: pulse-large 1s infinite;
+  animation: pulse-large 1s infinite;
+  -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(1, 1); }
 
 .click-map:hover:before {
@@ -183,22 +219,37 @@ body.modal #app {
   -webkit-animation: bounce 1s infinite;
   animation: bounce 1s infinite; }
 
-.active .click-map:before {
-  font-size: 2rem;
-  line-height: 3rem;
-  width: 3rem;
-  height: 3rem;
-  margin-top: 0;
-  margin-left: -1.5rem;
-  -moz-animation: pulse 1s infinite;
-  -webkit-animation: pulse 1s infinite;
-  animation: pulse 1s infinite;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0) scale(1, 1); }
-.active .click-map:hover:before {
-  -moz-animation: bounce 1s infinite;
-  -webkit-animation: bounce 1s infinite;
-  animation: bounce 1s infinite; }
+.active {
+  /* uncomment für full-version
+  .click-map:before{
+    font-size: 2rem;
+    line-height: 3rem;
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0;
+    margin-left: -1.5rem;
+    -moz-animation: pulse 1s infinite;
+    -webkit-animation: pulse 1s infinite;
+    animation: pulse 1s infinite;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  }*/ }
+  .active .click-map:before {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0;
+    margin-left: -.75rem;
+    -moz-animation: pulse 1s infinite;
+    -webkit-animation: pulse 1s infinite;
+    animation: pulse 1s infinite;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1, 1); }
+  .active .click-map:hover:before {
+    -moz-animation: bounce 1s infinite;
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite; }
 
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -265,9 +316,15 @@ body.modal #modal-container {
     body.modal #modal-container #modal {
       width: 230px;
       top: 20px;
-      margin-left: -155px; }
+      margin-left: -155px;
+      max-height: 70vh;
+      overflow-y: scroll; }
       body.modal #modal-container #modal img {
-        display: none; } }
+        display: none; }
+    body.modal #modal-container .modal-close {
+      position: fixed !important;
+      top: 1rem !important;
+      right: 1rem !important; } }
   body.modal #modal-container .modal-close {
     position: absolute;
     width: 2rem;
@@ -345,7 +402,7 @@ body.modal #modal-container {
   right: 0;
   z-index: 100;
   height: 100vh;
-  overflow: auto;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
   #legend ul {
     list-style: none;
@@ -355,9 +412,11 @@ body.modal #modal-container {
       background: #fff;
       border-left: 1px solid #ccc;
       border-bottom: 1px solid #ccc;
-      padding: 2px; }
+      padding: 6px; }
       #legend ul li a {
         cursor: pointer; }
+    #legend ul li:last-child {
+      margin-bottom: 40px; }
   #legend .legend-image {
     display: inline-block;
     vertical-align: middle; }

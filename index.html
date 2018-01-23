@@ -11,9 +11,23 @@
         <script src="js/vendors/CSSPlugin.min.js"></script>
         <script src="js/vendors/EasePack.min.js"></script>
         <script src="js/vendors/TweenMax.min.js"></script>
+        <script src="js/vendors/emos2.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Caveat+Brush" rel="stylesheet">
         <title>HR Town</title>
+
+        <script>
+            var emospro = {};
+            emospro.pageId = 'HR City';
+            emospro.requrl = window.location;
+            emospro.content = 'Landing Page';
+
+            emospro.siteid = 'LANDKARTE'
+            emospro.langid = 'Haufe'
+            emospro.countryid = 'Content Angebot'
+            emospro.businessunit = 'CCP'
+            window.emosPropertiesEvent(emospro);
+        </script>
     </head>
     <body>
         <div class="container block visible">
@@ -21,7 +35,7 @@
             <div id="introduction">
                 <div id="description">
                     <h3>Herzlich Willkommen</h3>
-                    <h4>Interaktive Onboarding-Landkarte  mit Tipps & Tricks</h4>
+                    <h4>Interaktive Onboarding-Landkarte mit Tipps & Tricks</h4>
                     <p>
                         Entdecken Sie in unserer Onboarding-Landkarte die wichtigsten Aspekte für Ihr erfolgreiches Mitarbeiter-Onboarding. Mit Klick auf die interaktiven Symbole erhalten Sie kurz und prägnant Tipps & Tricks. Der Download-Button verlinkt auf tiefergehende Informationen. Wir wünschen Ihnen viel Spaß bei der Erkundung!                    </p>
                     <a href="#" class="btn" id="btn-start">Los geht's</a>

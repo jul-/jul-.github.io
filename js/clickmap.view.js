@@ -8,6 +8,7 @@ var ClickMapView = Backbone.View.extend({
 
     events: {
         "click": "show",
+        "touchstart": "show",
         "mouseover": "toForeground",
         "mouseout": "toBackground"
     },
@@ -18,14 +19,18 @@ var ClickMapView = Backbone.View.extend({
     },
 
     render: function (){
-        this.$el.css({top: this.options.popup._y + 'px', left: this.options.popup._x + 'px'});
+        /* uncomment for full-version
+        this.$el.css({top: this.options.popup._y + 'px', left: this.options.popup._x + 'px'}); */
+        this.$el.css({top: (this.options.popup._y / 2) + 'px', left: (this.options.popup._x * .5) + 'px'});
 
         this.$el.html(this.template(this.options.popup));
 
         return this;
     },
 
-    show: function(){
+    show: function(e){
+        emospro.content = this.options.popup.title;
+        window.emosPropertiesEvent(emospro);
         Backbone.trigger("content", {popup: this.options.popup});
     },
 

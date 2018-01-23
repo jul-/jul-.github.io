@@ -5,10 +5,21 @@
   font-size: 0;
 }
 
+
+/* uncomment for full-sizing
 .tile{
   position: relative;
   display: inline-block;
   width: 400px;
   height: 400px;
+  -webkit-backface-visibility: hidden;
+}*/
+
+.tile{
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-size: cover;
   -webkit-backface-visibility: hidden;
 }

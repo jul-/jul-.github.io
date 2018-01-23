@@ -28,10 +28,18 @@ body.modal{
         width: 230px;
         top: 20px;
         margin-left: -155px;
+        max-height: 70vh;
+        overflow-y: scroll;
 
         img{
           display: none;
         }
+      }
+
+      .modal-close{
+        position: fixed ! important;
+        top: 1rem ! important;
+        right: 1rem ! important;
       }
     }
 
